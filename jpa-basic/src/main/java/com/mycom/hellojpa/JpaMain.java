@@ -15,6 +15,7 @@ public class JpaMain {
 		EntityManager em = emf.createEntityManager();
 		
 		EntityTransaction tx = em.getTransaction();
+		
 		tx.begin();
 		
 		try {
@@ -25,6 +26,7 @@ public class JpaMain {
 					.setFirstResult(5)
 					//조회할 데이터 수
 					.setMaxResults(8)
+					//결과를 리스트로 받는다.(결과가 없으면 빈 컬렉션을 반환.)
 					.getResultList();
 			
 			for (Member member: result) {
