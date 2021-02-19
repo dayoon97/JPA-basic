@@ -1,7 +1,5 @@
 package com.mycom.hellojpa;
 
-import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -28,6 +26,7 @@ public class JpaMain {
 			//영속
 			System.out.println(" === BEFORE ===");
 			em.persist(member);
+			em.detach(member);
 			System.out.println(" === AFTER === ");
 			
 			tx.commit();
